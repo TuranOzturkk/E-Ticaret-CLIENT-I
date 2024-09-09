@@ -1,0 +1,47 @@
+.kapsam {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.kutu {
+  
+  text-align: center;
+  
+}
+.forgot-password {
+  color: #bababa;
+  font-size: 13px;
+}
+.forgot-password:hover {
+  color: #20bf55;
+}
+
+
+.btn-login {
+  transition: all 0.3s ease-in-out;
+  font-family: "Dosis", sans-serif;
+}
+
+.btn-login {
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  background-image: linear-gradient(135deg, #20bf55 0%, #90cea5 100%);
+  box-shadow: 0 20px 30px -6px rgba(117, 117, 117, 0.5);
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-size: 24px;
+  color: white;
+}
+
+.btn-login:hover {
+  transform: translateY(3px);
+  box-shadow: none;
+}
+
+.btn-login:active {
+  opacity: 0.5;
+}

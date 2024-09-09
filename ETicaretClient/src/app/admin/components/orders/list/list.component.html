@@ -1,0 +1,60 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+    
+    <ng-container matColumnDef="orderCode">
+      <th mat-header-cell *matHeaderCellDef> Sipariş Numarası</th>
+      <td mat-cell *matCellDef="let element"> {{element.orderCode}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="userName">
+      <th mat-header-cell *matHeaderCellDef>Müşteri Adı</th>
+      <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalPrice">
+      <th mat-header-cell *matHeaderCellDef>Toplam Fiyat</th>
+      <td mat-cell *matCellDef="let element"> {{element.totalPrice}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdDate">
+      <th mat-header-cell *matHeaderCellDef>Oluşturma Tarihi</th>
+      <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="completed">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <img *ngIf="element.completed" src="../../../../../assets/yolda.gif" class="" width="35" height="35"  />
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="viewdetail">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element">
+        <img (click)="showDetail(element.id)" src="../../../../../assets/menu.png" class="info-item" width="25" height="25" style="margin-left:70%" />
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element"
+          appDelete
+          [id]="element.id"
+          (callback)="getOrders()"
+          controller="orders">
+
+        <!--<img src="../../../../../assets/delete.png" width="25" height="25" style="margin-left:15%" (click)="delete(element.id, $event)" />-->
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator (page)="pageChanged()"
+                 [pageSizeOptions]="[10, 20, 30]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

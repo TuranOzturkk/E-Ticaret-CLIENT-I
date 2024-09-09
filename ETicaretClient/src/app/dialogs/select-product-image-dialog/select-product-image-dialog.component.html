@@ -1,0 +1,41 @@
+
+  <div class="indexno">
+    <img mat-button mat-dialog-close src="../../../../../assets/close.png" width="30" height="30" />
+  </div>
+  <div class="div-product-image-dialog">
+
+    <mat-dialog-content class="mat-typography">
+      <app-file-upload [options]="options"></app-file-upload>
+    </mat-dialog-content>
+
+
+    <mat-card class="example-card div-cust-border" *ngFor="let image of images">
+
+      <img mat-card-image width="220" height="220" [src]="image.path">
+
+      <mat-card-content>
+
+      </mat-card-content>
+
+      <mat-card-actions>
+        <!--<input type="radio" name="img" (click)="showCase(image.id)">-->
+
+        <div>
+          <label>
+            <input type="radio" class="option-input radio" name="img" (click)="showCase(image.id)"/>
+          </label>
+        </div>
+
+
+        <img mat-button src="../../../../../assets/deleteimage.png" width="40" height="40" style="margin:auto;cursor: pointer;" (click)="deleteImage(image.id, $event)" />
+      </mat-card-actions>
+
+    </mat-card>
+
+    <mat-dialog-actions align="end">
+
+    </mat-dialog-actions>
+  
+  </div>
+
+

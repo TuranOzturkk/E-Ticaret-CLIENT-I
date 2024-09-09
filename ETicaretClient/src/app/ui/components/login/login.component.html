@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-5 "></div>
+  <div class="col-md-2 div-cust" style="margin-top:200px;">
+
+    <div class="form-group">
+      <label style="color:#808080;" for="username">Kullanıcı Adı & Email</label>
+      <input #txtUsernameOrEmail type="text" class="form-control" id="username" placeholder="Kullanıcı Adı & Email">
+      <small class="form-text text-muted invalid-feedback">Lütfen Kullanıcı Adını Boş Geçmeyiniz!</small>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+      <label style="color: #808080;" for="password">Şifre</label>
+      <input #txtPassword type="password" class="form-control" id="password" placeholder="Şifre">
+    </div>
+
+    <br />
+    <h5 type="submit" class="forgot-password" routerLink="/password-reset">Şifremi Unuttum</h5>
+    <br />
+
+    <div class="kapsam">
+      <button type="submit" class="btn-login" (click)="login(txtUsernameOrEmail.value,txtPassword.value)">Giriş Yap</button>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="kapsam">
+      <asl-google-signin-button></asl-google-signin-button> <!--GOOGLE giris-->
+      <img style="width:40px; height:40px; cursor:pointer" src="../../../../assets/facebook.gif" (click)="facebookLogin()" /> <!--FACEBOOK giris-->
+    </div>
+
+    <br />
+
+  </div>
+  <div class="col-md-5"></div>
+</div>

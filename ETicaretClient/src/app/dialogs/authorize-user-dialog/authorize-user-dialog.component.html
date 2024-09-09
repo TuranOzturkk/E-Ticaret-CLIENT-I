@@ -1,0 +1,39 @@
+
+<div mat-dialog-title class="ort">
+  <span style="color:#383838">{{data.name}} </span>
+  <span style="color:#8a8a8a">Endpoint`ine Rol Atama. Toplam {{roles.totalCount}} Rol.</span>
+ 
+ 
+ 
+</div>
+
+
+<div mat-dialog-content class="ort" style="width:100%;">
+  <p>
+    <span style="color:#000000; font-size:17px;">
+
+
+      <mat-selection-list #rolesComponent>
+        <mat-list-option *ngFor="let role of listRoles" selected="{{role.selected}}">
+          {{role.name}}
+        </mat-list-option>
+      </mat-selection-list>
+
+
+
+    </span>
+  </p>
+</div>
+<br />
+<div mat-dialog-actions style="margin:auto;">
+
+  <button class="rol" (click)="close()">İptal Et</button>
+  <button mat-raised-button matBadge="{{rolesComponent.selectedOptions.selected.length}}"
+          class="rol" [mat-dialog-close]="data" (click)="assignRoles(rolesComponent)">
+    Rolleri Ata
+  </button>
+
+  <!--<button class="custom-btn btn-1" (click)="close()">Hayır</button>
+  <button class="ort custom-btn btn-10" [mat-dialog-close]="data">Evet</button>-->
+</div>
+

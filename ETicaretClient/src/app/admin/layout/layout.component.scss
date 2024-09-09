@@ -1,0 +1,26 @@
+.example-container {
+  width: 100%;
+  min-height: 600px;
+  height: auto;
+  margin: 0px;
+  border: 0px solid #ff0000;
+  border-radius: 0.5rem;
+ 
+}
+.sidebar-deneme {
+  width: auto;
+  border-radius: 0.5rem;
+  border-right: 0px solid #ff0000;
+}
+.ortala-admin {
+  text-align: center;
+
+}
+.kenarlik_cust {
+ width:100%;
+  animation: pulsate 1.5s infinite alternate;
+  border: 0.1rem solid #b0b0b0;
+  border-radius: 1rem;
+  padding: 0.1em;
+  box-shadow: 0 0 1rem #b0b0b0, 0 0 1rem #b0b0b0, 0 0 1rem #b0b0b0, 0 0 0.4rem #b0b0b0, 0 0 1rem #b0b0b0, inset 0 0 0rem #b0b0b0;
+}

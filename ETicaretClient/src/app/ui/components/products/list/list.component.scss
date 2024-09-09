@@ -1,0 +1,86 @@
+.div-ana {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.div-cust {
+  width: 18rem;
+  float: left;
+  margin: 1%;
+  width: 23%;
+  min-width: 200px;
+  
+}
+
+.div-cust:hover{
+  /*opacity:0.5;*/
+  
+}
+.image {
+  margin-top: 10px;
+  max-width: 100%;
+  max-height: 330px;
+  min-height:330px;
+}
+.contain img {
+  object-fit: contain;
+}
+
+.cta {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 10px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+.image:hover {
+  //transform: rotate(2deg);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

@@ -1,0 +1,12 @@
+
+<h1 mat-dialog-title class="ort">Dikkat!</h1>
+
+<div mat-dialog-content class="ort">
+  <p>Siparişi Tamamlamak İstediğinize Emin Misiniz?</p>
+</div>
+
+<div mat-dialog-actions style="margin:auto;">
+  <button class="custom-btn btn-1" (click)="close()">Hayır</button>
+  <button class="ort custom-btn btn-10" [mat-dialog-close]="data" (click)="complate()">Evet</button>
+</div>
+

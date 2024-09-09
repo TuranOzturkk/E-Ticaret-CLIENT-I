@@ -1,0 +1,33 @@
+<h6 style="width:100%;">{{options.explanation}}</h6>
+
+<div class="center file-img font-size-file-up" style="max-width:100%; min-width:100%; height:100%;">
+
+  <ngx-file-drop dropZoneLabel="Drop files here" [accept]="options.accept" (onFileDrop)="selectedFiles($event)">
+    <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+
+      <img type="button" src="../../../../assets/upload.png" class="file-img" (click)="openFileSelector()">
+
+    </ng-template>
+  </ngx-file-drop>
+
+
+  <div class="upload-table" style="width:100%;" *ngIf="files">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="font" style="width:1400px;">Dosya Adı</th>
+        </tr>
+      </thead>
+      <tbody class="upload-name-style">
+        <tr class="font" *ngFor="let item of files; let i=index">
+          <td><strong>{{ item.relativePath }}</strong></td>
+
+         
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

@@ -1,0 +1,53 @@
+<div class="div-ana row">
+
+  <div class="card div-cust" *ngFor="let product of products;" >
+    
+    <img *ngIf="!product.productImageFiles.length" src="../../../assets/no-image.jpg" class="image" alt="...">
+
+    <img *ngIf="product.productImageFiles.length" src="{{baseUrl.url}}{{product.imagePath}}" class="image" alt="...">
+    
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+
+      <p class="card-text">{{product.price | currency:'₺'}}</p>
+
+      <button class="cta">
+        <span class="hover-underline-animation" (click)="addToBasket(product)"> Sepete Ekle </span>
+        <svg id="arrow-horizontal"
+             xmlns="http://www.w3.org/2000/svg"
+             width="30"
+             height="10"
+             viewBox="0 0 46 16">
+          <path id="Path_10"
+                data-name="Path 10"
+                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                transform="translate(30)"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li><a class="page-link"> {{currentPageNo}}/{{totalPageCount}} </a></li>
+
+          <li class="page-item"><a class="page-link" [routerLink]="['/products', currentPageNo - 1 <= 0 ? 1 : currentPageNo - 1]">Geri</a></li>
+
+          <li class="page-item" *ngFor="let pageNo of pageList;" routerLinkActive="active"><a class="page-link" [routerLink]="['/products', pageNo]">{{pageNo}}</a></li>
+
+          <li class="page-item"><a class="page-link" [routerLink]="['/products', currentPageNo + 1 >= totalPageCount ? totalPageCount : currentPageNo + 1]">İleri</a></li>
+
+        </ul>
+      </nav>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+</div>
+
+
+
+

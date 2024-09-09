@@ -1,0 +1,40 @@
+
+    <div class="modal-content <!--content-->">
+      <div class="modal-header">
+        <h2 class="modal-title" id="staticBackdropLabel">Sepet</h2>
+        <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+      </div>
+      <div class="modal-body" style="height:680px;">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Ürün Adı</th>
+              <th scope="col">Fiyatı</th>
+              <th scope="col">Adet</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="{{basketItem.basketItemId}}" *ngFor="let basketItem of basketItems;let i = index">
+              <th scope="row">{{i + 1}}</th>
+              <td>{{basketItem.name}}</td>
+              <td>{{basketItem.price}}</td>
+              <td>
+                <input type="number" style="width:45px;" data-id="{{basketItem.basketItemId}}" [value]="basketItem.quantity" (change)="changeQuantity($event)" />
+              </td>
+              <td>
+                <img src="../../assets/delete.png" style="margin-left:50%; cursor: pointer;width:25px; height:25px;" (click)="removeBasketItem(basketItem.basketItemId)" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="BasketClose" data-bs-dismiss="modal">Kapat</button>
+        <button type="button" class="BasketOkey" (click)="shoppingComplete()">Alışverişi Tamamla</button>
+      </div>
+    </div>
+
+

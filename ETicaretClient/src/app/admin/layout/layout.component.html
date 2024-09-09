@@ -1,0 +1,18 @@
+
+<app-header></app-header>
+<div class="kenarlik_cust">
+  <mat-drawer-container class="example-container">
+
+    <mat-drawer class="sidebar-deneme ortala-admin" mode="side" opened>
+      <app-sidebar></app-sidebar>
+    </mat-drawer>
+
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+
+  </mat-drawer-container>
+</div>
+
+  <app-footer></app-footer>
+
